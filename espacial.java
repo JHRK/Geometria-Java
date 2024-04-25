@@ -26,8 +26,6 @@ public class espacial extends geometriaMain {
     double geratriz;
     double pitagoras;
 
-    // deve ter as imagens para fazer os calculos
-    
     public Double getPi(){
         return this.Pi;
     }
@@ -52,10 +50,11 @@ public class espacial extends geometriaMain {
         return this.AL;
     }
 
-
     public Double PegarRaioMenor(){
         return this.r;
     }
+
+
 
     public Double calcularAreaCubo(){
         areaCubo = (aresta*aresta)*6;
@@ -81,7 +80,7 @@ public class espacial extends geometriaMain {
         area1 = arestax * arestay;
         area2 = arestay * arestaz;
         area3 = arestaz * arestax;
-        areaParalelepipedo = 2*arestax + 2*arestay + 2*arestaz;
+        areaParalelepipedo = 2*area1 + 2*area2 + 2*area3;
         return this.calcularAreaParalelepipedo();
     }
 
