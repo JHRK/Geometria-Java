@@ -21,8 +21,12 @@ public class geometriaMain {
         double AB;
         double AL;
         double r;
+        double raio;
+        int laterais;
 
         public static void main(String args[]){
-            
+            geometriaMain Blehrg = new geometriaMain();
+
+
     }
 }
