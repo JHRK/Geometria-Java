@@ -55,7 +55,7 @@ public class geometriaMain {
             return AreaPrismaTriangular;
         }
     
-        public Double calcularVolumePrismaTriangular(Double ){
+        public Double calcularVolumePrismaTriangular(Double AreaPrismaHexagonal ){
             return AreaPrismaHexagonal;
         }
     
@@ -83,39 +83,41 @@ public class geometriaMain {
             return volumeCone;
         }
     
-        public Double calcularAreaPiramide(Double AreaCubo){
-            return calcularAreaPiramide();
+        public Double calcularAreaPiramide(Double areaPiramide){
+            return areaPiramide;
         }
     
-        public Double calcularVolumePiramide(Double AreaCubo){
-            return calcularVolumePiramide();
+        public Double calcularVolumePiramide(Double volumePiramide){
+            return volumePiramide;
         }
 
         public static void main(String args[]){
             geometriaMain Blehrg = new geometriaMain();
             espacial esp = new espacial();
             double areaCubo = esp.areaCubo;
-            double volumeCubo;
-            double areaEsfera;
-            double volumeEsfera;
-            double areaParalelepipedo;
-            double volumeParalelepipedo;
-            double areaPrismaHexagonal;
-            double volumePrismaHexagonal;
-            double areaPrismaTriangular;
-            double volumePrismaTriangular;
-            double areaCilindro;
-            double volumeCilindro;
-            double areaCone;
-            double volumeCone;
-            double areaPiramide;
-            double volumePiramide;
+          //  double volumeCubo;
+           // double areaEsfera;
+           // double volumeEsfera;
+           // double areaParalelepipedo;
+          //  double volumeParalelepipedo;
+           // double areaPrismaHexagonal;
+          //  double volumePrismaHexagonal;
+          //  double areaPrismaTriangular;
+          //  double volumePrismaTriangular;
+          //  double areaCilindro;
+          //  double volumeCilindro;
+          //  double areaCone;
+          //  double volumeCone;
+          //  double areaPiramide;
+          //  double volumePiramide;
 
-            Scanner scanner = new Scanner(System.in);
+            System.out.println(areaCubo);
 
-            System.out.println("Qual a boa chefia, escolhe uma opção aí, tem a 1 que é pra geometria plana e 2 pra espacial, faz a boa aí.");
-            int operacao = scanner.nextInt();
-            System.out.println("tu escolheu " + operacao);
+           // Scanner scanner = new Scanner(System.in);
+
+           // System.out.println("Qual a boa chefia, escolhe uma opção aí, tem a 1 que é pra geometria plana e 2 pra espacial, faz a boa aí.");
+           // int operacao = scanner.nextInt();
+            //System.out.println("tu escolheu " + operacao);
 
 
     }

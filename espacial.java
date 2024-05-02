@@ -8,7 +8,7 @@ public class espacial extends geometriaMain {
     double volumeParalelepipedo;
     double areaPrismaHexagonal;
     double volumePrismaHexagonal;
-    double aresta;
+    double aresta=6.0;
     double arestax;
     double arestay;
     double arestaz;
@@ -152,7 +152,7 @@ public class espacial extends geometriaMain {
     public Double calcularVolumePiramide(){
         AB = laterais*((Math.pow(arestax, 2)*Math.sqrt(3))/4);
         volumePiramide = (AB*H)/3;
-        return this.calcularVolumePiramide();
+        return this.volumePiramide;
     }
 
     public static void main(String[] args) {
