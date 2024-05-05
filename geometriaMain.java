@@ -94,24 +94,8 @@ public class geometriaMain {
         public static void main(String args[]){
             geometriaMain Blehrg = new geometriaMain();
             espacial esp = new espacial();
-            double areaCubo = esp.areaCubo;
-          //  double volumeCubo;
-           // double areaEsfera;
-           // double volumeEsfera;
-           // double areaParalelepipedo;
-          //  double volumeParalelepipedo;
-           // double areaPrismaHexagonal;
-          //  double volumePrismaHexagonal;
-          //  double areaPrismaTriangular;
-          //  double volumePrismaTriangular;
-          //  double areaCilindro;
-          //  double volumeCilindro;
-          //  double areaCone;
-          //  double volumeCone;
-          //  double areaPiramide;
-          //  double volumePiramide;
 
-            System.out.println(areaCubo);
+            System.out.println(aresta);
 
            // Scanner scanner = new Scanner(System.in);
 
