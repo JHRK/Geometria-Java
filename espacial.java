@@ -1,163 +1,133 @@
 public class espacial extends geometriaMain {
 
-    double areaCubo;
-    double volumeCubo;
-    double areaEsfera;
-    double volumeEsfera;
-    double areaParalelepipedo;
-    double volumeParalelepipedo;
-    double areaPrismaHexagonal;
-    double volumePrismaHexagonal;
-    double aresta=6.0;
-    double arestax;
-    double arestay;
-    double arestaz;
-    double area1;
-    double area2;
-    double area3;
-    double areaPrismaTriangular;
-    double volumePrismaTriangular;
-    double areaCilindro;
-    double volumeCilindro;
-    double areaCone;
-    double volumeCone;
-    double areaPiramide;
-    double volumePiramide;
-    double geratriz;
-    double pitagoras;
 
-    public Double getPi(){
-        return this.Pi;
-    }
-
-    public Double PegarRaioMaior(){
-        return this.R;
-    }
-
-    public Double getAltura(){
-        return this.H;
-    }
-
-    public Double getVolume(){
-        return this.V;
-    }
-
-    public Double getAB(){
-        return this.AB;
-    }
-
-    public Double getAL(){
-        return this.AL;
-    }
-
-    public Double PegarRaioMenor(){
-        return this.r;
-    }
-
-
-
-    public Double calcularAreaCubo(){
-        areaCubo = (aresta*aresta)*6;
-        return this.calcularAreaCubo();
-    }
-
-    public Double calcularVolumeCubo(){
-        volumeCubo = Math.pow(aresta, 3);
-        return this.calcularVolumeCubo();
+    public static double calcularAreaCubo(double aresta){
+        double areaCubo = (aresta*aresta)*6;
+        return areaCubo;
     }
     
-    public Double calcularAreaEsfera(){
-        areaEsfera = 4*Pi*raio;
-        return this.calcularAreaCubo();
+        public static double calcularVolumeCubo(double aresta){
+        double volumeCubo = Math.pow(aresta, 3);
+        return volumeCubo;
+    }
+    
+        public static double calcularAreaEsfera(double Pi, double raio){
+        double areaEsfera = 4*Pi*raio;
+        return areaEsfera;
+    }
+    
+        public static double calcularVolumeEsfera(double Pi, double raio){
+        double volumeEsfera = 4*(Pi*Math.pow(raio,3))/3;
+        return volumeEsfera;
+    }
+    
+        public static double calcularAreaParalelepipedo(double arestax, double arestay, double arestaz){
+        double area1 = arestax * arestay;
+        double area2 = arestay * arestaz;
+        double area3 = arestaz * arestax;
+        double areaParalelepipedo = 2*area1 + 2*area2 + 2*area3;
+        return areaParalelepipedo;
+    }
+    
+        public static double calcularVolumeParalelepipedo(double arestax, double arestay, double arestaz){
+        double volumeParalelepipedo = arestax*arestay*arestaz;
+        return volumeParalelepipedo;
     }
 
-    public Double calcularVolumeEsfera(){
-        volumeEsfera = 4*(Pi*Math.pow(raio,3))/3;
-        return this.calcularVolumeCubo();
-    }
-
-    public Double calcularAreaParalelepipedo(){
-        area1 = arestax * arestay;
-        area2 = arestay * arestaz;
-        area3 = arestaz * arestax;
-        areaParalelepipedo = 2*area1 + 2*area2 + 2*area3;
-        return this.calcularAreaParalelepipedo();
-    }
-
-    public Double calcularVolumeParalelepipedo(){
-        volumeParalelepipedo = arestax*arestay*arestaz;
-        return this.calcularVolumeParalelepipedo();
-    }
-
-    public Double calcularAreaPrismaTriangular(){
+    
+    public static double calcularAreaPrismaTriangular(double arestax, double arestay, double AB, double AL){
         AB = (Math.pow(arestax, 2)*Math.sqrt(3))/4;
         AL = 3*(arestax*arestay);
-        areaPrismaTriangular = 2*AB+AL;
-        return this.calcularAreaPrismaTriangular();
+        double areaPrismaTriangular = 2*AB+AL;
+        return areaPrismaTriangular;
     }
 
-    public Double calcularVolumePrismaTriangular(){
+    public static double calcularVolumePrismaTriangular(double arestax, double AB, double H){
         AB = (Math.pow(arestax, 2)*Math.sqrt(3))/4;
-        volumePrismaTriangular = AB*H;
-        return this.calcularVolumePrismaTriangular();
+        double volumePrismaTriangular = AB*H;
+        return volumePrismaTriangular;
     }
 
-    public Double calcularAreaCilindro(){
+    public static double calcularAreaCilindro(double arestax, double AB, double AL, double Pi, double H){
         AB = Math.pow(arestax, 2)*Pi;
         AL = 2*(arestax*Pi*H);
-        areaCilindro = 2*AB+AL;
-        return this.calcularAreaCilindro();
+        double areaCilindro = 2*AB+AL;
+        return areaCilindro;
     }
 
-    public Double calcularVolumeCilindro(){
+    public static double calcularVolumeCilindro(double arestax, double H, double AB, double Pi){
         AB = Math.pow(arestax, 2)*Pi;
-        volumeCilindro = AB*H;
-        return this.calcularVolumeCilindro();
-    }
-
-    public Double calcularAreaPrismaHexagonal(){
-        AB = 6*((Math.pow(arestax, 2)*Math.sqrt(3))/4);
-        AL = 6*(arestax*H);
-        areaPrismaHexagonal = 2*AB+AL;
-        return this.calcularAreaPrismaHexagonal();
-    }
-
-    public Double calcularVolumePrismaHexagonal(){
-        AB = 6*((Math.pow(arestax, 2)*Math.sqrt(3))/4);
-        volumePrismaHexagonal = AB*H;
-        return this.calcularVolumePrismaHexagonal();
+        double volumeCilindro = AB*H;
+        return volumeCilindro;
     }
     
-    public Double calcularAreaCone(){
-        pitagoras = Math.pow(arestay, 2) + Math.pow(arestaz, 2);
+    public static double calcularAreaPrismaHexagonal(double arestax, double H, double AB, double AL){
+        AB = 6*((Math.pow(arestax, 2)*Math.sqrt(3))/4);
+        AL = 6*(arestax*H);
+        double areaPrismaHexagonal = 2*AB+AL;
+        return areaPrismaHexagonal;
+    } 
+
+    public static double calcularVolumePrismaHexagonal(double arestax, double H, double AB){
+        AB = 6*((Math.pow(arestax, 2)*Math.sqrt(3))/4);
+        double volumePrismaHexagonal = AB*H;
+        return volumePrismaHexagonal;
+    }
+
+    public static double calcularAreaCone(double arestay, double AB, double AL, double pitagoras, double geratriz, double Pi, double raio){
+        pitagoras = Math.pow(arestay, 2) + Math.pow(raio, 2);
         geratriz = Math.sqrt(pitagoras);
         AL = (geratriz*Pi*raio);
-        AB = Math.pow(arestax, 2)*Pi;
-        areaCone = AB + AL;
-        return this.calcularAreaCone();
+        AB = Math.pow(raio, 2)*Pi;
+        double areaCone = AB + AL;
+        return areaCone;
     }
 
-    public Double calcularVolumeCone(){
-        volumeCilindro = (Math.pow(raio, 2)*H*Pi)/3;  
-        return this.calcularVolumeCone();
+    public static double calcularVolumeCone(double raio, double Pi, double H){
+        double volumeCone = (Math.pow(raio, 2)*H*Pi)/3;  
+        return volumeCone;
+    }
+    
+        public static double calcularAreaTroncoCone(double arestay, double AB, double AL, double pitagoras, double geratriz, double Pi, double raio,double ABM){
+        pitagoras = Math.pow(arestay, 2) + Math.pow(raio, 2);
+        geratriz = Math.sqrt(pitagoras);
+        AL = (geratriz*Pi*raio);
+        AB = Math.pow(raio, 2)*Pi;
+        double areaTroncoCone = AB + AL;
+        return areaTroncoCone;
     }
 
-    public Double calcularAreaPiramide(){
+    public static double calcularVolumeTroncoCone(double R,double r, double Pi, double H){
+        double volumeTroncoCone = ((1/3)*Pi*H)*(Math.pow(R, 2) * Math.pow(r, 2) * (R*r));  
+        return volumeTroncoCone;
+    }
+
+
+    public static double calcularAreaPiramide(double arestax,double laterais, double AB, double AL, double H){
         AL = laterais*((0.5*arestax)*H);
         AB = laterais*((Math.pow(arestax, 2)*Math.sqrt(3))/4);
-        areaPiramide = AB+AL;
-        return this.calcularAreaPiramide();
+        double areaPiramide = AB+AL;
+        return areaPiramide;
     }
 
-    public Double calcularVolumePiramide(){
+    public static double calcularVolumePiramide(double arestax,double laterais, double AB, double H){
         AB = laterais*((Math.pow(arestax, 2)*Math.sqrt(3))/4);
-        volumePiramide = (AB*H)/3;
-        return this.volumePiramide;
+        double volumePiramide = (AB*H)/3;
+        return volumePiramide;
+    }
+    
+        public static double calcularAreaTroncoPiramide(double arestax,double arestay, double AB, double AL, double H, double ABM){
+        ABM = Math.pow(arestay,2);
+        AB = Math.pow(arestax, 2);
+        AL = ((arestax + arestay)*H)/2;
+        double areaTroncoPiramide = AB + ABM + (AL*4);
+        return areaTroncoPiramide;
     }
 
-    public static void main(String[] args) {
-
-
+    public static double calcularVolumeTroncoPiramide(double arestax,double arestay, double AB, double H,double ABM){
+        ABM = Math.pow(arestay,2);
+        AB = Math.pow(arestax, 2);
+        double volumeTroncoPiramide = (H/3)*(AB + ABM + (Math.sqrt(AB*ABM)));
+        return volumeTroncoPiramide;
     }
-
 }
