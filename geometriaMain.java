@@ -28,6 +28,11 @@ int opcone;
 double ABM;
 double pitagoras;
 double geratriz;
+double A;
+double B;
+double C;
+double D;
+double diagonal;
 
 public static void main(String args[]){
 geometriaMain Blehrg = new geometriaMain();
@@ -54,33 +59,91 @@ System.out.println("3 - retângulo ");
 System.out.println("4 - triângulos");
 System.out.println("5 - trapézio ");
 System.out.println("6 - algum dos '-gonos'");
+System.out.println("7 - Losango");
 
 int operacao = scanner.nextInt();
 
-if(operacao == 6){
-System.out.println("Tá, qual vai ser o tipo de '-gono'?");
-System.out.println("7 - pentágono ");
-System.out.println("8 - hexágono ");
-System.out.println("9 - heptacontakaiheptagono ");
-System.out.println("10 - octágono");
+                    case 1:
+                        System.out.println("Área ou perímetro?");
+                        System.out.println("1 area");
+                        System.out.println("2 peri");
+                        int opvolume = scanner.nextInt();
+                                
+                                case 1:
+                                System.out.println("Qual a medida do lado do quadrado?");
+                                System.out.println("Lado");
+                                Blehrg.aresta = scanner.nextDouble();
+                                double Quadrado = plana.calcularQuadrado(Blehrg.aresta);
+                                System.out.println("a area do cubo é  " + Quadrado);
+                                break;
+                            
+                    case 2:
+                        System.out.println("Qual a medida do lado do cubo?");
+                        System.out.println("Lado1");
+                        Blehrg.arestax = scanner.nextDouble();
+                        System.out.println("Lado2");
+                        Blehrg.arestay = scanner.nextDouble();
+                        double Retangulo = plana.calcularRetangulo+(Blehrg.aresta);
+                        System.out.println("a area do cubo é  " + Retangulo);
+                        break;
 
-int operacaogonos = scanner.nextInt();
+                    case 3:
+                        System.out.println("Qual a medida do lado do cubo?");
+                        System.out.println("Lado");
+                        Blehrg.aresta = scanner.nextDouble();
+                        double areaCubo = plana.calcularTriangulo1(Blehrg.aresta);
+                        System.out.println("a area do cubo é  " + areaCubo);
+                        break;
+                        
+                    case 4:
+                        System.out.println("Qual a medida do lado do cubo?");
+                        System.out.println("Lado");
+                        Blehrg.aresta = scanner.nextDouble();
+                        double areaCubo = plana.calcularAreaCubo(Blehrg.aresta);
+                        System.out.println("a area do cubo é  " + areaCubo);
+                        break;
+                        
+                    case 5:
+                        System.out.println("Qual a medida do lado do cubo?");
+                        System.out.println("Lado");
+                        Blehrg.aresta = scanner.nextDouble();
+                        double areaCubo = plana.calcularAreaCubo(Blehrg.aresta);
+                        System.out.println("a area do cubo é  " + areaCubo);
+                        break;
+                        
+                            case 6:
+                            System.out.println("Tá, qual vai ser o tipo de '-gono'?");
+                            System.out.println("7 - pentágono ");
+                            System.out.println("8 - hexágono ");
+                            System.out.println("9 - heptacontakaiheptagono ");
+                            System.out.println("10 - octágono");
+                            
+                            int operacaogonos = scanner.nextInt();
+                            
+                            switch(operacaogonos){
+                            case 7:
+                            System.out.println("penta");
+                            break;
+                            case 8:
+                            System.out.println("hexa");
+                            break;
+                            case 9:
+                            System.out.println("sete sete");
+                            break;
+                            case 10:
+                            System.out.println("octa");
+                            break;
+                            }
+                            
+                                case 7:
+                                System.out.println("Qual a medida do lado do cubo?");
+                                System.out.println("Lado");
+                                Blehrg.aresta = scanner.nextDouble();
+                                double areaCubo = plana.calcularAreaCubo(Blehrg.aresta);
+                                System.out.println("a area do cubo é  " + areaCubo);
+                                break;
 
-switch(operacaogonos){
-case 7:
-System.out.println("penta");
-break;
-case 8:
-System.out.println("hexa");
-break;
-case 9:
-System.out.println("sete sete");
-break;
-case 10:
-System.out.println("octa");
-break;
-}
-}
+
 
 case 2:
 System.out.println("Tá, qual vai ser o tipo de cálculo? 1 para área e 2 para volume");
