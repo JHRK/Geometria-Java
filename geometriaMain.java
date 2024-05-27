@@ -25,6 +25,7 @@ int operacaoprismas;
 int opvolume;
 int oppira;
 int opcone;
+int opplano;
 double ABM;
 double pitagoras;
 double geratriz;
@@ -33,6 +34,9 @@ double B;
 double C;
 double D;
 double diagonal;
+int opperi;
+int optrio;
+int opgonos2d;
 
 public static void main(String args[]){
 geometriaMain Blehrg = new geometriaMain();
@@ -51,99 +55,232 @@ System.out.println("tu escolheu geometria espacial, segue o fio...");
 }
 
 switch(Tipo){
+    
 case 1:
-System.out.println("Tá, qual vai ser o tipo de figura? ");
-System.out.println("1 - quadrado ");
-System.out.println("2 - círculo ");
-System.out.println("3 - retângulo ");
-System.out.println("4 - triângulos");
-System.out.println("5 - trapézio ");
-System.out.println("6 - algum dos '-gonos'");
-System.out.println("7 - Losango");
-
+System.out.println("Área ou perímetro?");
+System.out.println("1 area");
+System.out.println("2 peri");
 int operacao = scanner.nextInt();
 
-                    case 1:
-                        System.out.println("Área ou perímetro?");
-                        System.out.println("1 area");
-                        System.out.println("2 peri");
-                        int opvolume = scanner.nextInt();
-                                
-                                case 1:
-                                System.out.println("Qual a medida do lado do quadrado?");
-                                System.out.println("Lado");
-                                Blehrg.aresta = scanner.nextDouble();
-                                double Quadrado = plana.calcularQuadrado(Blehrg.aresta);
-                                System.out.println("a area do cubo é  " + Quadrado);
-                                break;
-                            
-                    case 2:
-                        System.out.println("Qual a medida do lado do cubo?");
-                        System.out.println("Lado1");
-                        Blehrg.arestax = scanner.nextDouble();
-                        System.out.println("Lado2");
-                        Blehrg.arestay = scanner.nextDouble();
-                        double Retangulo = plana.calcularRetangulo+(Blehrg.aresta);
-                        System.out.println("a area do cubo é  " + Retangulo);
-                        break;
+switch(operacao){   
+                        case 1:
+                        System.out.println("AREA -- qual vai ser o tipo de figura? ");
+                        System.out.println("1 - quadrado ");
+                        System.out.println("2 - círculo ");
+                        System.out.println("3 - retângulo ");
+                        System.out.println("4 - triângulos");
+                        System.out.println("5 - trapézio ");
+                        System.out.println("6 - algum dos '-gonos'");
+                        System.out.println("7 - Losango");
+                        int opplano = scanner.nextInt();
+                                        switch(opplano){                                
+                                            
+                                            case 1:
+                                                System.out.println("Qual a medida do lado do quadrado?");
+                                                System.out.println("Lado");
+                                                Blehrg.aresta = scanner.nextDouble();
+                                                double Quadrado = plana.calcularQuadrado(Blehrg.aresta);
+                                                System.out.println("a area do cubo é  " + Quadrado);
+                                                break;
+                                                
+                                                case 2:
+                                                System.out.println("Qual a medida do lado do bola?");
+                                                System.out.println("Pi");
+                                                Blehrg.Pi = scanner.nextDouble();
+                                                System.out.println("Raio");
+                                                Blehrg.raio = scanner.nextDouble();
+                                                double Bola = plana.calcularBola(Blehrg.Pi, Blehrg.raio);
+                                                System.out.println("a area do bola é  " + Bola);
+                                                break;
+                                                case 3:
+                                                System.out.println("Qual a medida do lado do retangulo?");
+                                                System.out.println("Lado");
+                                                Blehrg.arestax = scanner.nextDouble();
+                                                Blehrg.arestay = scanner.nextDouble();
+                                                double Retangulo = plana.calcularRetanguloParas(Blehrg.arestax,Blehrg.arestay);
+                                                System.out.println("a area do cubo é  " + Retangulo);
+                                                break;
+                                                
+                                                case 4:
+                                                System.out.println("Qual dos triangulos?");
+                                                int optrio = scanner.nextInt();
+                                                switch(optrio){  
+                                                                                                
+                                                                case 1:
+                                                                System.out.println("Qual a medida do lado do triangulos?");
+                                                                System.out.println("Lado");
+                                                                Blehrg.A = scanner.nextDouble();
+                                                                Blehrg.B = scanner.nextDouble();
+                                                                Blehrg.C = scanner.nextDouble();
+                                                                Blehrg.H = scanner.nextDouble();
+                                                                double Triangulo1 = plana.calcularTriangulo1(Blehrg.A,Blehrg.B,Blehrg.C,Blehrg.H);
+                                                                System.out.println("a area do cubo é  " + Triangulo1);
+                                                                break;
+                                                                
+                                                                case 2:
+                                                                System.out.println("Qual a medida do lado do triangulos?");
+                                                                System.out.println("Lado");
+                                                                Blehrg.aresta = scanner.nextDouble();
+                                                                double Triangulo2 = plana.calcularTriangulo2(Blehrg.aresta);
+                                                                System.out.println("a area do cubo é  " + Triangulo2);
+                                                                break;
+                                                    
+                                                }     
+                                                
+                                                case 5:
+                                                System.out.println("Qual a medida do lado do trapezio?");
+                                                System.out.println("Lado");
+                                                Blehrg.AB = scanner.nextDouble();
+                                                Blehrg.ABM = scanner.nextDouble();
+                                                Blehrg.H = scanner.nextDouble();
+                                                double Trapezio = plana.calcularTrapezio(Blehrg.AB,Blehrg.ABM,Blehrg.H);
+                                                System.out.println("a area do cubo é  " + Trapezio);
+                                                break;
+                                                
+                                                case 6:
+                                                System.out.println("1 ou 2?");
+                                                int opgonos2d = scanner.nextInt();
+                                                switch(opgonos2d){  
+                                                                                                
+                                                                case 1:
+                                                                System.out.println("Qual a medida do lado do gono?");
+                                                                System.out.println("Lado");
+                                                                Blehrg.A = scanner.nextDouble();
+                                                                Blehrg.B = scanner.nextDouble();
+                                                                Blehrg.C = scanner.nextDouble();
+                                                                Blehrg.H = scanner.nextDouble();
+                                                                double Triangulo1 = plana.calcularTriangulo1(Blehrg.A,Blehrg.B,Blehrg.C,Blehrg.H);
+                                                                System.out.println("a area do cubo é  " + Triangulo1);
+                                                                break;
+                                                                
+                                                                case 2:
+                                                                System.out.println("Qual a medida do lado do gono?");
+                                                                System.out.println("Lado");
+                                                                Blehrg.aresta = scanner.nextDouble();
+                                                                double Triangulo2 = plana.calcularTriangulo2(Blehrg.aresta);
+                                                                System.out.println("a area do cubo é  " + Triangulo2);
+                                                                break;
+                                                    
+                                                }   
+                                                case 7:
+                                                System.out.println("Quais as medidas do losango??");
+                                                System.out.println("Lado");
+                                                Blehrg.aresta = scanner.nextDouble();
+                                                System.out.println("Lado");
+                                                Blehrg.aresta = scanner.nextDouble();
+                                                double Losango = plana.calcularLosango(Blehrg.diagonal,Blehrg.D);
+                                                System.out.println("a area do cubo é  " + Losango);
+                                                break;
+                                        }
+                                        
+                                        break;
 
-                    case 3:
-                        System.out.println("Qual a medida do lado do cubo?");
-                        System.out.println("Lado");
-                        Blehrg.aresta = scanner.nextDouble();
-                        double areaCubo = plana.calcularTriangulo1(Blehrg.aresta);
-                        System.out.println("a area do cubo é  " + areaCubo);
-                        break;
+                        case 2:
+                        System.out.println("Perímetro -- qual vai ser o tipo de figura? ");
+                        System.out.println("1 - quadrado ");
+                        System.out.println("2 - círculo ");
+                        System.out.println("3 - retângulo ");
+                        System.out.println("4 - triângulos");
+                        System.out.println("5 - trapézio ");
+                        System.out.println("6 - algum dos '-gonos'");
+                        System.out.println("7 - Losango");
+                        int opperi = scanner.nextInt();
                         
-                    case 4:
-                        System.out.println("Qual a medida do lado do cubo?");
-                        System.out.println("Lado");
-                        Blehrg.aresta = scanner.nextDouble();
-                        double areaCubo = plana.calcularAreaCubo(Blehrg.aresta);
-                        System.out.println("a area do cubo é  " + areaCubo);
-                        break;
-                        
-                    case 5:
-                        System.out.println("Qual a medida do lado do cubo?");
-                        System.out.println("Lado");
-                        Blehrg.aresta = scanner.nextDouble();
-                        double areaCubo = plana.calcularAreaCubo(Blehrg.aresta);
-                        System.out.println("a area do cubo é  " + areaCubo);
-                        break;
-                        
-                            case 6:
-                            System.out.println("Tá, qual vai ser o tipo de '-gono'?");
-                            System.out.println("7 - pentágono ");
-                            System.out.println("8 - hexágono ");
-                            System.out.println("9 - heptacontakaiheptagono ");
-                            System.out.println("10 - octágono");
-                            
-                            int operacaogonos = scanner.nextInt();
-                            
-                            switch(operacaogonos){
-                            case 7:
-                            System.out.println("penta");
-                            break;
-                            case 8:
-                            System.out.println("hexa");
-                            break;
-                            case 9:
-                            System.out.println("sete sete");
-                            break;
-                            case 10:
-                            System.out.println("octa");
-                            break;
-                            }
-                            
-                                case 7:
-                                System.out.println("Qual a medida do lado do cubo?");
-                                System.out.println("Lado");
-                                Blehrg.aresta = scanner.nextDouble();
-                                double areaCubo = plana.calcularAreaCubo(Blehrg.aresta);
-                                System.out.println("a area do cubo é  " + areaCubo);
-                                break;
-
-
+                                        switch(opperi){                                
+                                           case 1:
+                                                System.out.println("Qual a medida do lado do quadrado?");
+                                                System.out.println("Lado");
+                                                Blehrg.aresta = scanner.nextDouble();
+                                                double periQuadrado = plana.calcularPeriQuadrado(Blehrg.aresta);
+                                                System.out.println("a area do cubo é  " + periQuadrado);
+                                                break;
+                                                
+                                                case 2:
+                                                System.out.println("Qual a medida do lado do bola?");
+                                                System.out.println("Pi");
+                                                Blehrg.Pi = scanner.nextDouble();
+                                                System.out.println("Raio");
+                                                Blehrg.raio = scanner.nextDouble();
+                                                double periBola = plana.calcularPeriBola(Blehrg.Pi, Blehrg.raio);
+                                                System.out.println("a area do bola é  " + periBola);
+                                                break;
+                                                case 3:
+                                                System.out.println("Qual a medida do lado do retangulo?");
+                                                System.out.println("Lado");
+                                                Blehrg.arestax = scanner.nextDouble();
+                                                Blehrg.arestay = scanner.nextDouble();
+                                                double periRetangulo = plana.calcularPeriRetanguloParas(Blehrg.arestax,Blehrg.arestay);
+                                                System.out.println("a area do cubo é  " + periRetangulo);
+                                                break;
+                                                
+                                                case 4:
+                                                System.out.println("Qual dos trinagulos??");
+                                                int optrio = scanner.nextInt();
+                                                switch(optrio){  
+                                                                                                
+                                                                case 1:
+                                                                System.out.println("Qual a medida do lado do triangulos?");
+                                                                System.out.println("Lado");
+                                                                Blehrg.A = scanner.nextDouble();
+                                                                Blehrg.B = scanner.nextDouble();
+                                                                Blehrg.C = scanner.nextDouble();
+                                                                double Triangulo1 = plana.calcularTriangulo1(Blehrg.A,Blehrg.B,Blehrg.C,Blehrg.H);
+                                                                System.out.println("a area do cubo é  " + Triangulo1);
+                                                                break;
+                                                                
+                                                                case 2:
+                                                                System.out.println("Qual a medida do lado do triangulos?");
+                                                                System.out.println("Lado");
+                                                                Blehrg.aresta = scanner.nextDouble();
+                                                                double Triangulo2 = plana.calcularTriangulo2(Blehrg.aresta);
+                                                                System.out.println("a area do cubo é  " + Triangulo2);
+                                                                break;
+                                                    
+                                                }     
+                                                
+                                                case 5:
+                                                System.out.println("Qual a medida do lado do trapezio?");
+                                                System.out.println("Lado");
+                                                Blehrg.aresta = scanner.nextDouble();
+                                                double Trapezio = plana.calcularTrapezio(Blehrg.AB,Blehrg.ABM,Blehrg.H);
+                                                System.out.println("a area do cubo é  " + Trapezio);
+                                                break;
+                                                
+                                                case 6:
+                                                System.out.println("1 ou 2?");
+                                                int opgonos2d = scanner.nextInt();
+                                                switch(opgonos2d){  
+                                                                                                
+                                                                case 1:
+                                                                System.out.println("Qual a medida do lado do triangulos?");
+                                                                System.out.println("Lado");
+                                                                Blehrg.aresta = scanner.nextDouble();
+                                                                double Triangulo1 = plana.calcularTriangulo1(Blehrg.A,Blehrg.B,Blehrg.C,Blehrg.H);
+                                                                System.out.println("a area do cubo é  " + Triangulo1);
+                                                                break;
+                                                                
+                                                                case 2:
+                                                                System.out.println("Qual a medida do lado do triangulos?");
+                                                                System.out.println("Lado");
+                                                                Blehrg.aresta = scanner.nextDouble();
+                                                                double Triangulo2 = plana.calcularTriangulo2(Blehrg.aresta);
+                                                                System.out.println("a area do cubo é  " + Triangulo2);
+                                                                break;
+                                                    
+                                                }   
+                                                
+                                                case 7:
+                                                System.out.println("Quais as medidas do losango??");
+                                                System.out.println("Lado");
+                                                Blehrg.aresta = scanner.nextDouble();
+                                                System.out.println("Lado");
+                                                Blehrg.aresta = scanner.nextDouble();
+                                                double Losango = plana.calcularLosango(Blehrg.diagonal,Blehrg.D);
+                                                System.out.println("a area do cubo é  " + Losango);
+                                                break;
+                                        }
+                                                                                break;
+}
 
 case 2:
 System.out.println("Tá, qual vai ser o tipo de cálculo? 1 para área e 2 para volume");
@@ -294,6 +431,7 @@ case 7:
                     break;
 
 }
+                                        break;
 
 case 2:
 System.out.println("VOLUME -- qual vai ser o tipo de polígono? ");
@@ -425,9 +563,10 @@ switch(opvolume){
             Blehrg.Pi = scanner.nextDouble();
             double volumeCilindro = espacial.calcularVolumeCilindro(Blehrg.arestax, Blehrg.H, Blehrg.AB, Blehrg.Pi);
             System.out.println("o volume  do cubo é  " + volumeCilindro);
-
+            break;
 
 }
+                                        break;
 
 
 }

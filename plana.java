@@ -22,7 +22,7 @@ public class plana extends geometriaMain {
         double Bola = Pi * Math.pow(raio,2);
         return Bola;
         }
-        public static double calcularPeriBola(double Pi, double raio{
+        public static double calcularPeriBola(double Pi, double raio){
         double periBola = 2*Pi*raio;
         return periBola;
         }
@@ -33,7 +33,7 @@ public class plana extends geometriaMain {
         }
         public static double calcularPeriTriangulo1(double A,double B,double C){
         double periTriangulo1 = A+B+C;
-        return Triangulo1;
+        return periTriangulo1;
         }
         
         public static double calcularTriangulo2(double aresta){
